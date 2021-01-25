@@ -1,0 +1,8 @@
+{
+    "driver": "PostgreSQL",
+    "host": "",
+    "username": "",
+    "password": "",
+    "port": 5432,
+    "databaseName": "crdw_cdm"
+}
