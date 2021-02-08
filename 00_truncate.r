@@ -2,7 +2,7 @@
 
 message("Starting to clear (truncate) database tables")
 
-tableList <- c("person")
+tableList <- c("person", "measurement")
 
 status <- lapply(tableList, function(tableName) {
   query <- paste0("TRUNCATE TABLE ", tableName)

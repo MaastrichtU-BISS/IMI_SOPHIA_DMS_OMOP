@@ -1,6 +1,6 @@
 insertDbTable <- function(connection, tableName, insertSet) {
-  curColNames <- colnames(subSet)
-  colNames <- paste0(colnames(subSet), collapse = ", ")
+  curColNames <- colnames(insertSet)
+  colNames <- paste0(colnames(insertSet), collapse = ", ")
   
   lapply(c(1:nrow(insertSet)), function(x) {
     row = insertSet[x,]
@@ -9,14 +9,16 @@ insertDbTable <- function(connection, tableName, insertSet) {
       origClass <- class(row[1,y])
       value <- as.character(row[1,y])
       
-      if (origClass == "character") {
-        value <- paste0("'", value, "'")
+      if (origClass == "character" ||
+          origClass == "Date") {
+        value <- paste0("'", as.character(value), "'")
       }
       
       value
     })
     
     valueString <- paste0(valuesPrepared, collapse = ", ")
+    valueString <- gsub("NA, ", "NULL, ", valueString)
     
     query <- paste0("INSERT INTO ", tableName, "(", colNames, ") VALUES (", valueString, ")")
     
