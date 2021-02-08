@@ -8,7 +8,8 @@ library(data.table)
 library(xlsx)
 
 # setwd("P:/SOPHIA_shared_space/OMOP_CDM/Software/R-scripts")
-setwd("L:/DMS/SOPHIA_shared_space/OMOP_CDM/Software/R-scripts")
+#setwd("L:/DMS/SOPHIA_shared_space/OMOP_CDM/Software/R-scripts")
+setwd("/Volumes/projects/DMS/SOPHIA_shared_space/OMOP_CDM/Software/R-scripts")
 
 ## Verbinden met Maastricht Study SOPHIA OMOP-database.
 
@@ -39,8 +40,11 @@ source("00_truncate.r")
 
 source("01_person.r")
 
-# Get results from database
-results_new <- dbGetQuery(connection, "SELECT * FROM person")
+################################################################################
+# Load measurements
+################################################################################
+
+source("02_measurement.r")
 
 ################################################################################
 # Disconnect from database
