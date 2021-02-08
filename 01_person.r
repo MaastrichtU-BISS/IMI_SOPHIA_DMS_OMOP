@@ -28,3 +28,5 @@ subSet$gender_source_value <- as.character(subSet$gender_source_value)
 
 # Insert the dataframe into the database
 insertDbTable(connection, "person", subSet)
+
+rm(list = c("dataSet", "myNames", "subSet"))

@@ -9,3 +9,5 @@ status <- lapply(tableList, function(tableName) {
   message(query)
   dbSendQuery(connection, query)
 })
+
+rm(tableList)
