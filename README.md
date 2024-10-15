@@ -8,6 +8,7 @@ The following software requirements are needed to run this code:
 - R (tested in version 4.3.1)
 - on linux: libpq-dev (use `sudo apt update && sudo apt install libpq-dev` to install this package)
 - Jupyter Lab with support for R (you can use the `jupyter/datascience-notebook` docker image for convenience, which requires [Docker](https://docs.docker.com/get-started/get-docker/))
+- A running OMOP database in PostgreSQL. This repository makes use of [these instructions](https://github.com/MaastrichtU-CDS/OMOP-CDM-setup).
 
 ### Data requirements
 The data needs to be in a folder outside of this git repository, but next to your current folder in the hierarchy. The code will refer to data files in `../data`.
