@@ -9,5 +9,5 @@ The following software requirements are needed to run this code:
 - on linux: libpq-dev (use `sudo apt update && sudo apt install libpq-dev` to install this package)
 - Jupyter Lab with support for R (you can use the `jupyter/datascience-notebook` docker image for convenience, which requires [Docker](https://docs.docker.com/get-started/get-docker/))
 
-**Data requirements**
+### Data requirements
 The data needs to be in a folder outside of this git repository, but next to your current folder in the hierarchy. The code will refer to data files in `../data`.
